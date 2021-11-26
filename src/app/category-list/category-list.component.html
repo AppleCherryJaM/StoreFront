@@ -1,0 +1,35 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Products</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td>
+          <ul *ngFor="let product of category.products">
+            <li (click)="goToCategoryList(product)">
+              <table>
+                <tbody>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.country}}</td>
+                <td>
+                  <img src="{{product.imgPath}}" alt="Тут должно быть изображение">
+                </td>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
